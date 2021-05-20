@@ -3,7 +3,8 @@ const app = express()
 const port = 3000
 const exphbs = require('express-handlebars')
 const reastaurantList = require('./restaurant.json')
-
+const mongoose = require('mongoose')
+mongoose.connect('mongodb://localhost/Restaurants')
 //difine the engine
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 
