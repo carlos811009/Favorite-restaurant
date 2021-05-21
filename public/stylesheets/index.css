@@ -78,6 +78,16 @@ header {
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
+.btn-danger {
+  height: 20px;
+  width: 50px;
+  padding: 0;
+  border: 0;
+  display: flex;  
+  justify-content: center;
+  align-items: flex-end;
+}
+
 
 @media screen and (max-width: 992px) {
   

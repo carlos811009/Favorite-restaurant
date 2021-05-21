@@ -1,10 +1,12 @@
 {{!-- 因為只有一個物件所以不用使用{{#each}} 使用反而無法正常顯示 --}}
 
-<h1 class="mb-1 restaurant-show-title">{{item.title}}</h1>
+<h1 class="mb-1 restaurant-show-title">{{restaurant.title}}</h1>
 <div class="container">
   <div class="row">
     <div class="col-12 col-md-10 mx-auto">
-
+      <form action="./delete" method="POST">
+        <button type="submit" class="btn btn-danger">ｘ</button>
+      </form>
       <p class="mb-1">
         <span class="text-secondary">
           <i class="fas fa-utensils pr-2"></i>
@@ -18,8 +20,8 @@
           <i class="fas fa-map-marker-alt pr-2"></i>
           地址：
         </span>
-        {{item.location}}
-        <a href="{{item.google_map}}" class="text-secondary" target="_blank">
+        {{restaurant.location}}
+        <a href={{restaurant.google_map}} class="text-secondary" target="_blank">
           <i class="fas fa-location-arrow pr-2 fa-xs"></i>
         </a>
       </p>
@@ -29,14 +31,14 @@
           <i class="fas fa-mobile-alt pr-2"></i>
           電話：
         </span>
-        {{item.phone}}
+        {{restaurant.phone}}
       </p>
 
       <p class="mb-5">
-        {{item.description}}
+        {{restaurant.description}}
       </p>
 
-      <img class="rounded mx-auto d-block mb-4 w-100" src="{{item.image}}" alt="{{item.title}}"
+      <img class="rounded mx-auto d-block mb-4 w-100" src={{restaurant.image}} alt={{restaurant.title}}
         style="max-width: 600px;">
     </div>
   </div>
