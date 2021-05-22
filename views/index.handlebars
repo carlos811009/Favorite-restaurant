@@ -20,11 +20,16 @@
     <div class="col-md-10 col-12 mx-auto">
       <div class="card-columns">
         {{#each restaurant}}
-
         <div class="card mb-2">
-          <form action="./restaurants/{{this._id}}/delete" method="POST">
-            <button type="submit" class="btn btn-danger">ｘ</button>
-          </form>
+          <div class="operating">
+            <button class="editBtn" data-bs-toggle="modal" data-bs-target="#createModal">
+              <i class="fas fa-edit"></i>
+            </button>
+            </form>
+            <form action="./restaurants/{{this._id}}/delete" method="POST">
+              <button type="submit" class="btn btn-danger">ｘ</button>
+            </form>
+          </div>
           <a href="/restaurants/{{this._id}}/detail" class="text-secondary">
             <img class="card-img-top" src={{this.image}} alt={{this.name}}>
             <div class="card-body p-3">
@@ -41,9 +46,6 @@
             </div>
           </a>
         </div>
-
-
-
         {{/each}}
       </div>
     </div>

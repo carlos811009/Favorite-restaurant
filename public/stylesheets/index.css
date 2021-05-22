@@ -77,15 +77,29 @@ header {
   font-size: 3rem;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+.operating {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.editBtn {
+  border: 0;
+  padding: 0;
+  font-size:18px;
+  margin-right:5px;
+  background-color: transparent;
+}
 
 .btn-danger {
   height: 20px;
-  width: 50px;
+  width: 20px;
   padding: 0;
   border: 0;
   display: flex;  
   justify-content: center;
   align-items: flex-end;
+  margin-right: 5px;
 }
 
 

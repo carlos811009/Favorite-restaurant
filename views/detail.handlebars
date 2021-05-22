@@ -4,9 +4,12 @@
 <div class="container">
   <div class="row">
     <div class="col-12 col-md-10 mx-auto">
-      <form action="./delete" method="POST">
-        <button type="submit" class="btn btn-danger">ｘ</button>
-      </form>
+      <div class="operating">
+        <i class="fas fa-edit"></i>
+        <form action="./restaurants/{{this._id}}/delete" method="POST">
+          <button type="submit" class="btn btn-danger">ｘ</button>
+        </form>
+      </div>
       <p class="mb-1">
         <span class="text-secondary">
           <i class="fas fa-utensils pr-2"></i>

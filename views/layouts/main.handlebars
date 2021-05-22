@@ -28,42 +28,44 @@
             width="30" height="30" class="d-inline-block align-top" alt="我的餐廳清單">
           我的餐廳清單
         </a>
-        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">新增餐廳</button>
+        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#createModal">新增餐廳</button>
       </div>
     </nav>
-
     <div class="banner"></div>
   </header>
 
   <!-- search bar -->
+  <button type="button" class="editBtn btn btn-info" data-bs-toggle="modal" data-bs-target="#editModal">
+    ssss
+  </button>
 
   {{{body}}}
 
-  {{!-- modal --}}
-  <form action="" method="post">
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  {{!-- create modal --}}
+  <form action="/restaurant" class="was-validated" method="POST">
+    <div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">新增餐廳</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h5 class="modal-title" id="exampleModalLabel">餐廳資訊</h5>
           </div>
           <div class="modal-body">
-            <div class="input-group mb-3">
+            <div class="input-group mb-3 has-validation">
               <span class="input-group-text" id="basic-addon1">餐廳名稱</span>
-              <input type="text" class="form-control" placeholder="ex:好吃牛肉麵" aria-label="Username"
-                aria-describedby="basic-addon1">
+              <input type="text" class="form-control is-invalid" placeholder="ex:好吃牛肉麵" aria-label="Username"
+                aria-describedby="basic-addon1" name="name" required>
+
             </div>
             <div class="input-group mb-3">
               <span class="input-group-text" id="basic-addon2">電話</span>
-              <input type="text" class="form-control" placeholder="ex: 0900-000000, 02-0000000"
-                aria-label="phone-number" aria-describedby="basic-addon2">
+              <input type="text" class="form-control is-invalid" placeholder="ex: 0900-000000, 02-0000000"
+                aria-label="phone-number" aria-describedby="basic-addon2" name="phone"
+                oninput="value=value.replace(/[^\d]/g,'')" required>
             </div>
             <div class="input-group mb-3">
               <span class="input-group-text" id="basic-addon2">餐廳類別</span>
-              <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                <div class="input-group mb-3" style="background-color: gray,"></div>
-                <option selected>請選擇餐廳風格</option>
+              <select class="form-select" required aria-label="select example" name="category">
+                <option value="">請選擇餐廳風格</option>
                 <option value="義式">義式</option>
                 <option value="美式">美式</option>
                 <option value="台式">台式</option>
@@ -73,15 +75,23 @@
                 <option value="酒吧">酒吧</option>
                 <option value="其他">其他</option>
               </select>
+              <div class="invalid-feedback">Example invalid select feedback</div>
             </div>
+
             <div class="input-group mb-3">
               <span class="input-group-text" id="basic-addon3">自評分數</span>
-              <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" placeholder="1~5分">
+              <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" placeholder="1~5分"
+                name="rating" oninput="value=value.replace(/[^\d]/g,'')" required>
+            </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon3">地址</span>
+              <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" placeholder="..."
+                name="location" required>
             </div>
             <div class="input-group mb-3">
               <span class="input-group-text" id="basic-addon3">上傳圖片</span>
               <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"
-                value="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5632/06.jpg" disabled>
+                value="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5632/06.jpg" name="image" disabled>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -91,9 +101,72 @@
         </div>
       </div>
   </form>
+
+  {{!-- edit-modal --}}
+  <form action="/restaurant" class="was-validated" method="POST">
+    <div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">餐廳資訊</h5>
+          </div>
+          <div class="modal-body">
+            <div class="input-group mb-3 has-validation">
+              <span class="input-group-text" id="basic-addon1">餐廳名稱</span>
+              <input type="text" class="form-control is-invalid" placeholder="ex:好吃牛肉麵" aria-label="Username"
+                aria-describedby="basic-addon1" name="name" required>
+
+            </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon2">電話</span>
+              <input type="text" class="form-control is-invalid" placeholder="ex: 0900-000000, 02-0000000"
+                aria-label="phone-number" aria-describedby="basic-addon2" name="phone"
+                oninput="value=value.replace(/[^\d]/g,'')" required>
+            </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon2">餐廳類別</span>
+              <select class="form-select" required aria-label="select example" name="category">
+                <option value="">請選擇餐廳風格</option>
+                <option value="義式">義式</option>
+                <option value="美式">美式</option>
+                <option value="台式">台式</option>
+                <option value="日式">日式</option>
+                <option value="早午餐">早午餐</option>
+                <option value="宵夜">宵夜</option>
+                <option value="酒吧">酒吧</option>
+                <option value="其他">其他</option>
+              </select>
+              <div class="invalid-feedback">Example invalid select feedback</div>
+            </div>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon3">自評分數</span>
+              <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" placeholder="1~5分"
+                name="rating" oninput="value=value.replace(/[^\d]/g,'')" required>
+            </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon3">地址</span>
+              <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" placeholder="..."
+                name="location" required>
+            </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon3">上傳圖片</span>
+              <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"
+                value="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5632/06.jpg" name="image" disabled>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Create</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </form>
+
   <script src="/javascripts/jquery-3.6.0.js"></script>
   <script src="/javascripts/popper.js"></script>
   <script src="/javascripts/bootstrap.js"></script>
+
 </body>
 
 </html>

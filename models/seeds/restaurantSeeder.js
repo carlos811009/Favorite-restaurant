@@ -1,4 +1,4 @@
-const reastaurantList = require('/Users/carlos/Desktop/ac_exercise/Restaurant-website/restaurant.json')
+const reastaurantJson = require('/Users/carlos/Desktop/ac_exercise/Restaurant-website/restaurant.json')
 const RestaurantList = require('/Users/carlos/Desktop/ac_exercise/Restaurant-website/models/restaurants-model.js')
 const mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost/restaurant-list', { useNewUrlParser: true, useUnifiedTopology: true })
@@ -10,8 +10,8 @@ db.on('error', () => {
 
 db.once('open', () => {
   console.log('mongodb connected')
-  reastaurantList.results.forEach(item => {
-    restaurantlists.create({
+  reastaurantJson.results.forEach(item => {
+    RestaurantList.create({
       "name": item.name,
       "name_en": item.name_en,
       "category": item.category,
