@@ -27,11 +27,11 @@
                 <i class="fas fa-edit"></i>
               </button>
             </a>
-            <form action="./restaurants/{{this._id}}?_method=DELETE" method="POST">
+            <form action="/restaurants/{{this._id}}?_method=DELETE" method="POST">
               <button type="submit" class="btn btn-danger"> x </button>
             </form>
           </div>
-          <a href="/restaurants/{{this._id}}/detail" class="text-secondary">
+          <a href="./restaurants/{{this._id}}/detail" class="text-secondary">
             <img class="card-img-top" src={{this.image}} alt={{this.name}}>
             <div class="card-body p-3">
               <h6 class="card-title mb-1">{{this.name}}</h6>

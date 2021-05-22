@@ -1,15 +1,8 @@
-const reastaurantJson = require('/Users/carlos/Desktop/ac_exercise/Restaurant-website/restaurant.json')
-const RestaurantList = require('/Users/carlos/Desktop/ac_exercise/Restaurant-website/models/restaurants-model.js')
-const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/restaurant-list', { useNewUrlParser: true, useUnifiedTopology: true })
-const db = mongoose.connection
-
-db.on('error', () => {
-  console.log('mongdb error')
-})
+const reastaurantJson = require('/Restaurant-website/restaurant.json')
+const RestaurantList = require('/Restaurant-website/models/restaurants-model.js')
+const db = require('../../config/mongoose')
 
 db.once('open', () => {
-  console.log('mongodb connected')
   reastaurantJson.results.forEach(item => {
     RestaurantList.create({
       "name": item.name,
