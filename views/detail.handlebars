@@ -5,7 +5,11 @@
   <div class="row">
     <div class="col-12 col-md-10 mx-auto">
       <div class="operating">
-        <i class="fas fa-edit"></i>
+        <a href="/restaurants/{{restaurant._id}}/edit">
+          <button class="editBtn" data-bs-toggle="modal" data-bs-target="#editModal">
+            <i class="fas fa-edit"></i>
+          </button>
+        </a>
         <form action="./restaurants/{{this._id}}/delete" method="POST">
           <button type="submit" class="btn btn-danger">ｘ</button>
         </form>
@@ -15,7 +19,7 @@
           <i class="fas fa-utensils pr-2"></i>
           類別：
         </span>
-        義式餐廳
+        {{restaurant.category}}
       </p>
 
       <p class="mb-1">

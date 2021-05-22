@@ -22,10 +22,11 @@
         {{#each restaurant}}
         <div class="card mb-2">
           <div class="operating">
-            <button class="editBtn" data-bs-toggle="modal" data-bs-target="#createModal">
-              <i class="fas fa-edit"></i>
-            </button>
-            </form>
+            <a href="/restaurants/{{this._id}}/edit">
+              <button class="editBtn" data-bs-toggle="modal" data-bs-target="#editModal">
+                <i class="fas fa-edit"></i>
+              </button>
+            </a>
             <form action="./restaurants/{{this._id}}/delete" method="POST">
               <button type="submit" class="btn btn-danger">ｘ</button>
             </form>

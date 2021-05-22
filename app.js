@@ -54,6 +54,16 @@ app.get('/search', (req, res) => {
     .catch(error => console.log(error))
 })
 
+app.get('/restaurants/:id/edit', (req, res) => {
+  const id = req.params.id
+  return RestaurantList.findById(id)
+    .lean()
+    .then(restaurant => {
+      res.render('edit', { restaurant })
+    })
+    .catch(error => console.log(error))
+})
+
 app.post('/restaurants/:id/delete', (req, res) => {
   const id = req.params.id
   return RestaurantList.findById(id)
@@ -68,6 +78,7 @@ app.post('/restaurant', (req, res) => {
   const category = req.body.category
   const rating = req.body.rating
   const location = req.body.location
+  const description = req.body.description
   const image = 'https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5632/06.jpg'
   const newItem = {
     name: name,
@@ -75,6 +86,7 @@ app.post('/restaurant', (req, res) => {
     category: category,
     rating: rating,
     location: location,
+    description: description,
     image: image
   }
   return RestaurantList.create(newItem)
@@ -84,13 +96,32 @@ app.post('/restaurant', (req, res) => {
 
 })
 
-app.post('/restaurants/:id/edit', (req, res) => {
+app.post('/restaurants/:id/save', (req, res) => {
   const id = req.params.id
-  RestaurantList.findById(id)
-    .lean()
-    .then(item => { item })
+  const name = req.body.name
+  const phone = req.body.phone
+  const category = req.body.category
+  const rating = req.body.rating
+  const location = req.body.location
+  const description = req.body.description
+  console.log(description)
+  const image = 'https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5632/06.jpg'
+  return RestaurantList.findById(id)
+    .then(restaurant => {
+      console.log(description)
+      restaurant.name = name
+      restaurant.phone = phone
+      restaurant.category = category
+      restaurant.rating = rating
+      restaurant.location = location
+      restaurant.description = description
+      restaurant.image = image
+      return restaurant.save()
+    })
+    .then((restaurant) => res.redirect(`/restaurants/${id}/detail`))
     .catch(error => console.log(error))
 })
+
 
 
 app.listen(port, () => {
