@@ -73,13 +73,7 @@ app.post('/restaurants/:id/delete', (req, res) => {
 })
 
 app.post('/restaurant', (req, res) => {
-  const name = req.body.name
-  const phone = req.body.phone
-  const category = req.body.category
-  const rating = req.body.rating
-  const location = req.body.location
-  const description = req.body.description
-  const image = 'https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5632/06.jpg'
+  const { name, phone, category, rating, location, description, image } = req.body
   const newItem = {
     name: name,
     phone: phone,
@@ -98,17 +92,10 @@ app.post('/restaurant', (req, res) => {
 
 app.post('/restaurants/:id/save', (req, res) => {
   const id = req.params.id
-  const name = req.body.name
-  const phone = req.body.phone
-  const category = req.body.category
-  const rating = req.body.rating
-  const location = req.body.location
-  const description = req.body.description
-  console.log(description)
+  const { name, phone, category, rating, location, description } = req.body
   const image = 'https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5632/06.jpg'
   return RestaurantList.findById(id)
     .then(restaurant => {
-      console.log(description)
       restaurant.name = name
       restaurant.phone = phone
       restaurant.category = category
