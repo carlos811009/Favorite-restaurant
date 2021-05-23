@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000
 const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
 
@@ -19,5 +19,5 @@ app.set('view engine', 'handlebars')
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 
 app.listen(port, () => {
-  console.log('ok')
+  console.log(`http://location:${port}`)
 })
