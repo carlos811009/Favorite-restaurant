@@ -1,6 +1,7 @@
-const reastaurantJson = require('/Users/carlos/Desktop/ac_exercise/Restaurant-website/restaurant.json')
-const RestaurantList = require('/Users/carlos/Desktop/ac_exercise/Restaurant-website/models/restaurants-model.js')
+const reastaurantJson = require('../../restaurant.json')
+const RestaurantList = require('../restaurants-model.js')
 const db = require('../../config/mongoose')
+
 db.once('open', () => {
   reastaurantJson.results.forEach(item => {
     RestaurantList.create({
