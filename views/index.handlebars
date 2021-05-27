@@ -14,7 +14,10 @@
     </div>
   </div>
 </div>
+
 <!-- restaurant list -->
+
+{{#if restaurant.length}}
 <div class="container mt-5">
   <div class="row">
     <div class="col-md-10 col-12 mx-auto">
@@ -52,3 +55,6 @@
     </div>
   </div>
 </div>
+{{else}}
+<h3 class="message text-center mt-4">沒有相關資料</h3>
+{{/if}}
