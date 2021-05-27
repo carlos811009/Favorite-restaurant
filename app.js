@@ -14,7 +14,6 @@ app.use(methodOverride('_method'))
 app.use(routes)
 
 
-
 app.set('view engine', 'handlebars')
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 

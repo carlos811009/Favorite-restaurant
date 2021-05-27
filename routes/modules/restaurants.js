@@ -18,7 +18,7 @@ router.get('/search', (req, res) => {
   return RestaurantList.find()
     .lean()
     .then(restaurant => {
-      const rearchList = restaurant.filter(item => item.name.toLowerCase().includes(keyword.toLowerCase()))
+      const rearchList = restaurant.filter(item => item.name.toLowerCase().includes(keyword.toLowerCase()) || item.category.toLowerCase().includes(keyword.toLowerCase()))
       res.render('index', { restaurant: rearchList })
     })
     .catch(error => console.log(error))
