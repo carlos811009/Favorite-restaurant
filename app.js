@@ -18,5 +18,5 @@ app.set('view engine', 'handlebars')
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 
 app.listen(port, () => {
-  console.log(`http://location:${port}`)
+  console.log(`http://localhost:${port}`)
 })
