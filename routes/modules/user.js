@@ -13,6 +13,11 @@ router.post('/login', passport.authenticate('local', {
   failureRedirect: '/restaurants/login'
 }))
 
+router.get('/logout', (req, res) => {
+  req.logOut()
+  res.redirect('/restaurants/login')
+})
+
 router.get('/register', (req, res) => {
   res.render('register')
 })
