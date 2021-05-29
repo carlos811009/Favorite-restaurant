@@ -34,6 +34,12 @@ const restaurantSchema = new Schema({
   "description": {
     type: String, // 資料型別是字串
   },
+  "userId": {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    index: true,
+    required: true
+  }
 })
 
 module.exports = mongoose.model('Restaurantlist', restaurantSchema)
