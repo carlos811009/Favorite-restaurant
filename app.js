@@ -5,14 +5,16 @@ const methodOverride = require('method-override')
 const session = require('express-session')
 const exphbs = require('express-handlebars')
 const routes = require('./routes/index')
+
 const port = process.env.PORT || 3000
 require('./config/mongoose')
 
 
-
+const usePassport = require('./config/passport')
 
 app.set('view engine', 'handlebars')
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
+
 
 app.use(session({
   secret: 'keyboard cat',
@@ -24,6 +26,9 @@ app.use(session({
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static('public'))
 app.use(methodOverride('_method'))
+
+usePassport(app)
+
 app.use(routes)
 
 
