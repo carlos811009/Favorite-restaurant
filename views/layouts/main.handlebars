@@ -29,9 +29,10 @@
           我的餐廳清單
         </a>
         <div>
+          {{#if isAuthenticated}}
           <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#createModal">新增餐廳</button>
-          <a href="./restaurants/login" type="button" class="btn btn-info">Login</a>
-          <a href="./restaurants/logout" type="button" class="btn btn-info">Logout</a>
+          <a href="./user/logout" type="button" class="btn btn-info">Logout</a>
+          {{/if}}
         </div>
       </div>
     </nav>

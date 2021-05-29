@@ -10,12 +10,12 @@ router.get('/login', (req, res) => {
 
 router.post('/login', passport.authenticate('local', {
   successRedirect: '/',
-  failureRedirect: '/restaurants/login'
+  failureRedirect: '/restaurants/user/login'
 }))
 
 router.get('/logout', (req, res) => {
   req.logOut()
-  res.redirect('/restaurants/login')
+  res.redirect('/user/login')
 })
 
 router.get('/register', (req, res) => {
