@@ -31,7 +31,7 @@
         <div>
           {{#if isAuthenticated}}
           <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#createModal">新增餐廳</button>
-          <a href="./user/logout" type="button" class="btn btn-info">Logout</a>
+          <a href="/user/logout" type="button" class="btn btn-info">Logout</a>
           {{/if}}
         </div>
       </div>
@@ -75,6 +75,7 @@
                 <option value="早午餐">早午餐</option>
                 <option value="宵夜">宵夜</option>
                 <option value="酒吧">酒吧</option>
+                <option value="咖啡">咖啡</option>
                 <option value="其他">其他</option>
               </select>
               <div class="invalid-feedback">Example invalid select feedback</div>
