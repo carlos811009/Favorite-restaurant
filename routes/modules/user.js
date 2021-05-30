@@ -45,8 +45,8 @@ router.post('/register', (req, res) => {
   User.findOne({ email })
     .then(user => {
       if (user) {
-        errors.push('此帳號已經註冊了！')
-        res.render('register', {
+        errors.push('此 email 已經註冊了！')
+        return res.render('register', {
           errors,
           name,
           email,

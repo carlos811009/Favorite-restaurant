@@ -6,8 +6,11 @@ const session = require('express-session')
 const exphbs = require('express-handlebars')
 const routes = require('./routes/index')
 const flash = require('connect-flash')
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT
 require('./config/mongoose')
 
 
@@ -18,7 +21,7 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 
 
 app.use(session({
-  secret: 'keyboard cat',
+  secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: true
 }))
