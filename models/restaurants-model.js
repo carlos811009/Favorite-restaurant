@@ -1,40 +1,40 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const restaurantSchema = new Schema({
-  "name": {
+  name: {
     type: String, // 資料型別是字串
     required: true // 這是個必填欄位
   },
-  "name_en": {
+  name_en: {
     type: String, // 資料型別是字串
   },
-  "category": {
-    type: String, // 資料型別是字串
-    required: true // 這是個必填欄位
-  },
-  "image": {
+  category: {
     type: String, // 資料型別是字串
     required: true // 這是個必填欄位
   },
-  "location": {
+  image: {
     type: String, // 資料型別是字串
     required: true // 這是個必填欄位
   },
-  "phone": {
+  location: {
     type: String, // 資料型別是字串
     required: true // 這是個必填欄位
   },
-  "google_map": {
+  phone: {
+    type: String, // 資料型別是字串
+    required: true // 這是個必填欄位
+  },
+  google_map: {
     type: String, // 資料型別是字串
   },
-  "rating": {
+  rating: {
     type: Number, // 資料型別是字串
     required: true // 這是個必填欄位
   },
-  "description": {
+  description: {
     type: String, // 資料型別是字串
   },
-  "userId": {
+  userId: {
     type: Schema.Types.ObjectId,
     ref: 'User',
     index: true,

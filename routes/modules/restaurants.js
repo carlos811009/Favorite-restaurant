@@ -39,14 +39,14 @@ router.post('/', (req, res) => {
   const image = "https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5632/06.jpg"
   const userId = req.user._id
   const newItem = {
-    name: name,
-    phone: phone,
-    category: category,
-    rating: rating,
-    location: location,
-    description: description,
-    image: image,
-    userId: userId
+    name,
+    phone,
+    category,
+    rating,
+    location,
+    description,
+    image,
+    userId
   }
 
   return RestaurantList.create(newItem)
