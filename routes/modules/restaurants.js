@@ -22,7 +22,7 @@ router.get('/search', (req, res) => {
   return RestaurantList.find({ userId })
     .lean()
     .then(restaurant => {
-      let searchList = []
+      let searchList = restaurant
       if (keyword.length !== 0) {
         searchList = restaurant.filter(item => item.name.toLowerCase().includes(keyword.toLowerCase()) || item.category.toLowerCase().includes(keyword.toLowerCase()))
       }
