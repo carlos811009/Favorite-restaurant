@@ -64,6 +64,7 @@ header {
   white-space:nowrap;
 }
 
+.restaurant-zone,
 .restaurant-category {
   color: #666666;
   font-size: 0.8rem;
@@ -121,10 +122,10 @@ header {
     justify-content: center;
 }
 
-/* @media screen and (max-width: 575px) {
+@media screen and (max-width: 575px) {
   
   .card img{
     height: auto;
   }
   
-} */
+}

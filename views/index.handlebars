@@ -3,13 +3,42 @@
     <div class="search-bar-inner">
       <form action="/restaurants/search">
         <h4 class="mb-2">尋找餐廳：</h4>
-        <div class="input-group">
-          <input type="text" name="keyword" class="form-control" placeholder="輸入餐廳、分類" aria-label="Restaurant Name..."
-            value="" aria-describedby="search-button">
-          <div class="input-group-append">
-            <button class="btn btn-major" type="submit" id="search-button"><i class="fas fa-search"></i></button>
+        <div class="row">
+          <div class="input-group col-12">
+            <input type="text" name="keyword" class="form-control" placeholder="輸入餐廳、分類" aria-label="Restaurant Name..."
+              value="" aria-describedby="search-button">
+            <div class="input-group-append">
+              <button class="btn btn-major" type="submit" id="search-button"><i class="fas fa-search"></i></button>
+            </div>
+          </div>
+          <div class="select_container mt-3 col-12 row ">
+            <div class="input-group col-5">
+              <select class="form-select form-control" aria-label="select example" name="category">
+                <option value="">餐廳風格</option>
+                <option value="義式">義式</option>
+                <option value="美式">美式</option>
+                <option value="台式">台式</option>
+                <option value="日式">日式</option>
+                <option value="早午餐">早午餐</option>
+                <option value="宵夜">宵夜</option>
+                <option value="酒吧">酒吧</option>
+                <option value="咖啡">咖啡</option>
+                <option value="其他">其他</option>
+              </select>
+            </div>
+            <div class="input-group col-5">
+              <select class="form-select form-control" aria-label="select example" name="zone">
+                <option value="">地區 </option>
+                <option value="中山區">中山區</option>
+                <option value="松山區">松山區</option>
+                <option value="信義區">信義區</option>
+                <option value="中正區">中正區</option>
+              </select>
+            </div>
           </div>
         </div>
+
+
       </form>
     </div>
   </div>
@@ -38,10 +67,16 @@
             <img class="card-img-top" src={{this.image}} alt={{this.name}}>
             <div class="card-body p-3">
               <h6 class="card-title mb-1">{{this.name}}</h6>
-
-              <div class="restaurant-category mb-1">
-                <i class="fas fa-utensils pr-2"></i> {{this.category}}
+              <div class="row">
+                <div class="restaurant-zone mb-1 col-3">
+                  <i class="fas fa-map-marker-alt pr-2"></i>
+                  {{this.zone}}
+                </div>
+                <div class="restaurant-category mb-1 col-3">
+                  <i class="fas fa-utensils pr-2"></i> {{this.category}}
+                </div>
               </div>
+
 
               <span class="badge badge-pill badge-danger font-weight-normal">
                 {{this.rating}}

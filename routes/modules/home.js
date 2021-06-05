@@ -8,7 +8,6 @@ router.get('/', (req, res) => {
     .lean()
     .sort({ _id: 'asc' })//正序排列 desc反序
     .then(restaurant => res.render('index', { restaurant }))
-  // res.render('index', { restaurant })
 })
 
 module.exports = router

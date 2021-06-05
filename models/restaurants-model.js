@@ -39,6 +39,9 @@ const restaurantSchema = new Schema({
     ref: 'User',
     index: true,
     required: true
+  },
+  zone: {
+    type: String
   }
 })
 
