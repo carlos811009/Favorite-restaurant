@@ -10,8 +10,10 @@ router.get('/login', (req, res) => {
 
 
 router.post('/login', passport.authenticate('local', {
+  badRequestMessage: 'Please fill in the the email and password',
   successRedirect: '/',
-  failureRedirect: '/user/login'
+  failureRedirect: '/user/login',
+  failureFlash: true
 }))
 
 router.get('/logout', (req, res) => {

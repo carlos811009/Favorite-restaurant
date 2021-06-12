@@ -11,27 +11,26 @@ module.exports = app => {
 
   //套用LocalStrategy,usernameField是官方設定,最後必須為done
   passport.use(new LocalStrategy({ usernameField: 'email' }, (email, password, done) => {
-
     //從資料庫找email
     User.findOne({ email })
       .then(user => {
         //沒有表示不存在
         if (!user) {
-          return done(null, false, { message: 'This email is not regitstered!' })
+          return done(null, false, { message: 'email is not registered' })
         }
         //判別password 使否與資料庫一樣
         return bcrypt.compare(password, user.password)
           .then(isMatch => {
             if (!isMatch) {
-              return done(null, false, { message: 'Check your email and password are correct!' })
+              return done(null, false, { message: 'incorrect password！' })
             }
             //都正確回傳user
             return done(null, user)
           })
-
       })
       .catch(err => done(err, false))
   }))
+
 
   passport.use(new FacebookStrategy({
     clientID: process.env.FACEBOOK_ID,

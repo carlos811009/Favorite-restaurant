@@ -9,7 +9,7 @@ const auth = require('./modules/auth')
 const { authenticator } = require('../middleware/auth')
 
 
-router.use('/restaurants', authenticator, restaurants)
+router.use('/restaurants', restaurants)
 router.use('/auth', auth)
 router.use('/user', user)
 router.use('/', authenticator, home)
