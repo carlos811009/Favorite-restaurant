@@ -32,6 +32,7 @@ git clone https://github.com/carlos811009/Q1-3-.git
 - npm install
 - npm init
 - npm install method-override
+- npm run dev
 
 # 開發環境
 請參考 .env example

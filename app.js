@@ -5,6 +5,7 @@ const session = require('express-session')
 const exphbs = require('express-handlebars')
 const routes = require('./routes/index')
 const flash = require('connect-flash')
+
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
 }
