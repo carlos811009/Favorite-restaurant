@@ -34,7 +34,7 @@ git clone https://github.com/carlos811009/Q1-3-.git
 - 專案資料夾內新建.env （內容請參考env.example)
 - npm install express
 - npm run seed
-- npm run dev
+- npm run start
 
 # 開發環境
 請參考 .env example
