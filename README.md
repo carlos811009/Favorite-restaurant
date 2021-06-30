@@ -12,7 +12,7 @@ https://restaurantwebcarlos.herokuapp.com/
 - 帳號: user2@example.com , 密碼：12345678
 
 # 開發環境
-### Node.js
+### Node.js (V10.15.0)
 
 # 套件
 - express
