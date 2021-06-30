@@ -29,9 +29,8 @@ https://restaurantwebcarlos.herokuapp.com/
 git clone https://github.com/carlos811009/Q1-3-.git
 
 # Step
-- npm install
-- npm init
-- npm install method-override
+- 連線mongoDB
+- npm run seed
 - npm run dev
 
 # 開發環境
