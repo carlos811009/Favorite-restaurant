@@ -14,6 +14,9 @@ https://restaurantwebcarlos.herokuapp.com/
 # 開發環境
 ### Node.js (V10.15.0)
 
+# 資料庫
+### mongoDB with Robo3T
+
 # 套件
 - express
 - express-handlebars
@@ -31,10 +34,11 @@ git clone https://github.com/carlos811009/Q1-3-.git
 # Step
 
 - 連線本地mongoDB
+- 開啟Robo3T (預設為localhost:27017)
 - 專案資料夾內新建.env （內容請參考env.example)
 - npm install express
 - npm run seed
-- npm run start
+- node app.js 
 
 # 開發環境
 請參考 .env example
