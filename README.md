@@ -30,7 +30,7 @@ git clone https://github.com/carlos811009/Q1-3-.git
 
 # Step
 
-- 連線mongoDB
+- 連線本地mongoDB
 - 專案資料夾內新建.env （內容請參考env.example)
 - npm install express
 - npm run seed
