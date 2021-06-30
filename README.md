@@ -41,3 +41,6 @@ git clone https://github.com/carlos811009/Q1-3-.git
 
 # 本地瀏覽
 http://localhost:3000/
+
+- 帳號: user1@example.com , 密碼：12345678
+- 帳號: user2@example.com , 密碼：12345678
