@@ -97,8 +97,8 @@
 
             <div class="input-group mb-3">
               <span class="input-group-text" id="basic-addon3">自評分數</span>
-              <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" placeholder="1~5分"
-                name="rating" oninput="value=value.replace(/[^\d]/g,'')" required>
+              <input type="number" class="form-control" id="basic-url" aria-describedby="basic-addon3" placeholder="1~5分"
+                name="rating" min="1" max="5" required>
             </div>
             <div class="input-group mb-3">
               <span class="input-group-text" id="basic-addon3">地址</span>
